@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SkillSwap — Teach what you know. Learn what you love. Connect with people who match your skills." />
+  <title>SkillSwap — Teach. Learn. Connect.</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" role="banner">
+    <nav class="navbar__container" aria-label="Main navigation">
+      <a href="index.html" class="navbar__logo" aria-label="SkillSwap Home">
+        <span class="navbar__logo-icon" aria-hidden="true">⟳</span>
+        <span class="navbar__logo-text">SkillSwap</span>
+      </a>
+
+      <ul class="navbar__links" role="list">
+        <li><a href="#home" class="navbar__link active">Home</a></li>
+        <li><a href="#explore" class="navbar__link">Explore</a></li>
+        <li><a href="#matches" class="navbar__link">Matches</a></li>
+        <li><a href="#dashboard" class="navbar__link">Dashboard</a></li>
+      </ul>
+
+      <div class="navbar__actions">
+        <button class="btn btn--ghost" id="btn-login" aria-label="Log in to your account">Log In</button>
+        <button class="btn btn--primary" id="btn-get-started" aria-label="Create a free account">Get Started</button>
+      </div>
+
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile" id="mobile-menu" role="dialog" aria-label="Mobile navigation" hidden>
+      <ul class="navbar__mobile-links" role="list">
+        <li><a href="#home" class="navbar__link">Home</a></li>
+        <li><a href="#explore" class="navbar__link">Explore</a></li>
+        <li><a href="#matches" class="navbar__link">Matches</a></li>
+        <li><a href="#dashboard" class="navbar__link">Dashboard</a></li>
+      </ul>
+      <button class="btn btn--primary btn--full" id="btn-mobile-get-started" aria-label="Get started with SkillSwap">Get Started</button>
+    </div>
+  </header>
+
+  <main id="home" role="main">
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg-grid" aria-hidden="true"></div>
+      <div class="hero__bg-glow hero__bg-glow--1" aria-hidden="true"></div>
+      <div class="hero__bg-glow hero__bg-glow--2" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <div class="hero__container">
+          <div class="hero__badge" aria-label="Platform announcement">
+            <span class="hero__badge-dot" aria-hidden="true"></span>
+            Skill-for-skill exchange — no money needed
+          </div>
+
+          <h1 class="hero__heading" id="hero-heading">
+            Teach What You Know.<br />
+            <span class="hero__heading-gradient">Learn What You Love.</span>
+          </h1>
+
+          <p class="hero__subtitle">
+            SkillSwap connects people who want to share knowledge. 
+            Trade skills, grow together, and build meaningful connections — no money needed.
+          </p>
+
+          <div class="hero__actions">
+            <button class="btn btn--primary btn--large" id="btn-hero-start" aria-label="Start swapping skills for free">
+              Start Swapping Free
+              <span class="btn__icon" aria-hidden="true">→</span>
+            </button>
+            <button class="btn btn--ghost btn--large" id="btn-hero-explore" aria-label="Explore skills available on SkillSwap">
+              Explore Skills
+            </button>
+          </div>
+
+          <div class="hero__social-proof" aria-label="Demo users">
+            <div class="hero__avatars" id="hero-avatars" aria-label="Demo users"></div>
+            <p class="hero__social-text">
+              Demo profiles — create your own to get started
+            </p>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__card hero__card--1">
+            <div class="hero__card-avatar">🎨</div>
+            <div class="hero__card-info">
+              <span class="hero__card-name">Sarah K.</span>
+              <span class="hero__card-skill">Teaches: UI Design</span>
+            </div>
+            <span class="hero__card-badge">Match 96%</span>
+          </div>
+          <div class="hero__card hero__card--2">
+            <div class="hero__card-avatar">🎸</div>
+            <div class="hero__card-info">
+              <span class="hero__card-name">Marcus L.</span>
+              <span class="hero__card-skill">Teaches: Guitar</span>
+            </div>
+            <span class="hero__card-badge">Match 89%</span>
+          </div>
+          <div class="hero__card hero__card--3">
+            <div class="hero__card-avatar">💻</div>
+            <div class="hero__card-info">
+              <span class="hero__card-name">Priya M.</span>
+              <span class="hero__card-skill">Teaches: Python</span>
+            </div>
+            <span class="hero__card-badge">Match 94%</span>
+          </div>
+        </div>
+      </div><!-- /.hero__inner -->
+    </section>
+
+    <!-- ===== FEATURES SECTION ===== -->
+    <section class="features" id="explore" aria-labelledby="features-heading">
+      <div class="features__container">
+        <div class="features__header">
+          <span class="features__eyebrow">How It Works</span>
+          <h2 class="features__heading" id="features-heading">
+            Everything You Need to<br />
+            <span class="gradient-text">Grow Your Skills</span>
+          </h2>
+          <p class="features__subtitle">
+            Three powerful pillars that make SkillSwap the smartest way to learn and teach.
+          </p>
+        </div>
+
+        <div class="features__grid">
+
+          <!-- Feature 1 -->
+          <article class="feature-card" aria-labelledby="feature-teach-heading">
+            <div class="feature-card__icon-wrap" aria-hidden="true">
+              <span class="feature-card__icon">🏫</span>
+            </div>
+            <h3 class="feature-card__heading" id="feature-teach-heading">Teach Skills</h3>
+            <p class="feature-card__description">
+              Share your expertise with eager learners. Create a skill profile and connect
+              with people who want exactly what you know.
+            </p>
+            <ul class="feature-card__list" role="list">
+              <li>Build your teacher profile</li>
+              <li>List skills you can teach</li>
+              <li>Get connection requests from learners</li>
+            </ul>
+            <button class="btn btn--outline feature-card__btn" aria-label="Start teaching a skill">
+              Start Teaching →
+            </button>
+          </article>
+
+          <!-- Feature 2 -->
+          <article class="feature-card feature-card--highlight" aria-labelledby="feature-learn-heading">
+            <div class="feature-card__badge" aria-label="Most popular feature">Most Popular</div>
+            <div class="feature-card__icon-wrap" aria-hidden="true">
+              <span class="feature-card__icon">📚</span>
+            </div>
+            <h3 class="feature-card__heading" id="feature-learn-heading">Learn Skills</h3>
+            <p class="feature-card__description">
+              Find someone who knows what you want to learn. Browse skills, filter by category,
+              and send a connection request to the right person.
+            </p>
+            <ul class="feature-card__list" role="list">
+              <li>Browse skills across categories</li>
+              <li>Filter by Technology, Design, Music, Language, Business</li>
+              <li>Search by name, skill, or location</li>
+              <li>Send and receive connection requests</li>
+            </ul>
+            <button class="btn btn--primary feature-card__btn" aria-label="Start learning a new skill">
+              Start Learning →
+            </button>
+          </article>
+
+          <!-- Feature 3 -->
+          <article class="feature-card" aria-labelledby="feature-match-heading">
+            <div class="feature-card__icon-wrap" aria-hidden="true">
+              <span class="feature-card__icon">🤝</span>
+            </div>
+            <h3 class="feature-card__heading" id="feature-match-heading">Smart Matching</h3>
+            <p class="feature-card__description">
+              Our matching algorithm finds compatible skill-swap partners based on
+              what you teach and what you want to learn.
+            </p>
+            <ul class="feature-card__list" role="list">
+              <li>Smart compatibility score</li>
+              <li>Two-way skill matching</li>
+              <li>Match based on teaching and learning goals</li>
+              <li>Send connection requests</li>
+            </ul>
+            <button class="btn btn--outline feature-card__btn" aria-label="Find your skill match">
+              Find My Match →
+            </button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MATCHES SECTION (placeholder for JS) ===== -->
+    <section class="matches-preview" id="matches" aria-labelledby="matches-heading">
+      <div class="matches-preview__container">
+        <div class="matches-preview__header">
+          <span class="features__eyebrow">Skill Matches</span>
+          <h2 class="matches-preview__heading" id="matches-heading">
+            People Looking to <span class="gradient-text">Swap Skills</span>
+          </h2>
+          <p class="matches-preview__subtitle">
+            Browse demo profiles — create your own to see personalized matches.
+          </p>
+        </div>
+        <!-- Cards injected by JavaScript -->
+        <div class="matches-preview__grid" id="matches-grid" aria-label="Current skill swap listings" role="list"></div>
+        <div class="matches-preview__actions">
+          <button class="btn btn--primary btn--large" id="btn-see-all-matches" aria-label="See all skill swap matches">
+            See All Matches
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DASHBOARD SECTION (placeholder for JS) ===== -->
+    <section class="dashboard-preview" id="dashboard" aria-labelledby="dashboard-heading">
+      <div class="dashboard-preview__container">
+        <div class="dashboard-preview__header">
+          <span class="features__eyebrow">Your Space</span>
+          <h2 class="dashboard-preview__heading" id="dashboard-heading">
+            Your Personal <span class="gradient-text">Skill Dashboard</span>
+          </h2>
+          <p class="dashboard-preview__subtitle">
+            Manage your profile, track connections, and monitor your skill growth — all in one place.
+          </p>
+        </div>
+        <!-- Dashboard content injected by JavaScript -->
+        <div class="dashboard-preview__content" id="dashboard-content" aria-label="Dashboard preview"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="navbar__logo" aria-label="SkillSwap Home">
+            <span class="navbar__logo-icon" aria-hidden="true">⟳</span>
+            <span class="navbar__logo-text">SkillSwap</span>
+          </a>
+          <p class="footer__brand-desc">
+            A skill-exchange platform where you can showcase what you teach,
+            discover what you want to learn, and find compatible skill partners.
+          </p>
+          <div class="footer__socials" aria-label="Social media links">
+            <a href="https://www.linkedin.com/in/manish-kevat-467aa9288/" class="footer__social-link" aria-label="Manish Kevat on LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+            <a href="https://github.com/manish-7610" class="footer__social-link" aria-label="Manish Kevat on GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="mailto:mkevatraj@gmail.com" class="footer__social-link" aria-label="Email Manish Kevat at mkevatraj@gmail.com" title="mkevatraj@gmail.com">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <div class="footer__nav-group">
+            <h3 class="footer__nav-heading">Product</h3>
+            <ul role="list">
+              <li><a href="#explore" class="footer__nav-link">Explore Skills</a></li>
+              <li><a href="#matches" class="footer__nav-link">Find Matches</a></li>
+              <li><a href="#dashboard" class="footer__nav-link">Dashboard</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav-group">
+            <h3 class="footer__nav-heading">Legal</h3>
+            <ul role="list">
+              <li><a href="#" class="footer__nav-link" aria-disabled="true" tabindex="0">Privacy Policy</a></li>
+              <li><a href="#" class="footer__nav-link" aria-disabled="true" tabindex="0">Terms of Service</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 SkillSwap. All rights reserved. Built with ❤️ for the Hackathon.</p>
+        <p class="footer__tagline">Teach. Learn. Grow. Repeat.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Overlay (rendered by JS) -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="SkillSwap dialog" hidden>
+    <div class="modal" id="modal">
+      <button class="modal__close" id="modal-close" aria-label="Close modal">✕</button>
+      <div class="modal__content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification (rendered by JS) -->
+  <div class="toast" id="toast" role="alert" aria-live="polite" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

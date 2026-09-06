@@ -1,0 +1,53 @@
+# SkillSwap — .gitignore
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+# NEVER commit .env — it contains real database credentials and JWT secrets.
+# Use .env.example as a safe template for new developers.
+.env
+backend/.env
+*.env
+.env.*
+!.env.example
+!backend/.env.example
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+venv/
+.venv/
+env/
+ENV/
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+.venv
+venv
+env
+
+# ── Database ──────────────────────────────────────────────────────────────────
+*.db
+*.sqlite3
+
+# ── IDE / Editor ──────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Test artifacts ────────────────────────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
