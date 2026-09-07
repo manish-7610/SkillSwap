@@ -177,7 +177,7 @@ function renderAvatar(avatar, name = '') {
    ================================================ */
 
 /** Single source of truth for the backend URL. */
-const API_BASE_URL = 'https://skillswap-production-49a1.up.railway.app';
+const API_BASE_URL = 'https://https://skillswap-rvm9.onrender.com';
 
 /** Storage key for the JWT access token — isolated from demo data. */
 const AUTH_TOKEN_KEY = 'skillswap_auth_token';
@@ -2869,7 +2869,7 @@ const CHAT_MAX_RECONNECTS = 3;
 const CHAT_PAGE_SIZE      = 50;
 
 /* ── WS URL builder (token in query-param per WS spec) ── */
-const WS_BASE_URL = 'wss://skillswap-production-49a1.up.railway.app';
+const WS_BASE_URL = 'wss://https://skillswap-rvm9.onrender.com';
 function chatWsUrl() {
   return `${WS_BASE_URL}/api/v1/ws/chat?token=${encodeURIComponent(Auth.getToken() || '')}`;
 }
