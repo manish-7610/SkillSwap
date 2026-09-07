@@ -1565,6 +1565,31 @@ p  { color: var(--text-secondary); line-height: 1.7; }
   padding: 2px 0;
 }
 .skill-input-area input::placeholder { color: var(--text-muted); }
+
+/* Row that holds the text input + Add button as a single flex line */
+.skill-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 0;
+}
+.skill-input-row input {
+  flex: 1;
+  min-width: 0;
+}
+.skill-add-btn {
+  flex-shrink: 0;
+  /* Comfortable tap target on mobile */
+  min-height: 36px;
+  padding: 0 var(--space-4);
+}
+/* Disabled state: dim the button but keep it visible as a hint */
+.skill-add-btn:disabled {
+  opacity: 0.38;
+  cursor: default;
+  pointer-events: none;
+}
 .skill-tag--removable {
   display: inline-flex;
   align-items: center;

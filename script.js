@@ -1583,12 +1583,34 @@ function makeSkillInput(containerId, existing = [], max = 5) {
           e.preventDefault();
           addTag(inp.value);
           inp.value = '';
+          addBtn.disabled = true;
         }
         if (e.key === 'Backspace' && inp.value === '' && tags.length) {
           tags.pop(); render();
         }
       });
-      wrap.appendChild(inp);
+      inp.addEventListener('input', () => {
+        addBtn.disabled = !inp.value.trim();
+      });
+
+      const addBtn = document.createElement('button');
+      addBtn.type = 'button';
+      addBtn.className = 'btn btn--outline btn--sm skill-add-btn';
+      addBtn.textContent = 'Add';
+      addBtn.disabled = true;
+      addBtn.setAttribute('aria-label', 'Add skill');
+      addBtn.addEventListener('click', () => {
+        addTag(inp.value);
+        inp.value = '';
+        addBtn.disabled = true;
+        inp.focus();
+      });
+
+      const row = document.createElement('div');
+      row.className = 'skill-input-row';
+      row.appendChild(inp);
+      row.appendChild(addBtn);
+      wrap.appendChild(row);
     }
   }
 
@@ -1681,6 +1703,7 @@ function makeApiSkillInput(containerId, skillType, initialSkills = [], max = 5) 
           const val = inp.value.trim();
           if (!val) return;
           inp.disabled = true;
+          addBtn.disabled = true;
           inp.value = '';
           await handleAdd(val, inp);
         }
@@ -1712,7 +1735,30 @@ function makeApiSkillInput(containerId, skillType, initialSkills = [], max = 5) 
           }
         }
       });
-      wrap.appendChild(inp);
+      inp.addEventListener('input', () => {
+        addBtn.disabled = !inp.value.trim();
+      });
+
+      const addBtn = document.createElement('button');
+      addBtn.type = 'button';
+      addBtn.className = 'btn btn--outline btn--sm skill-add-btn';
+      addBtn.textContent = 'Add';
+      addBtn.disabled = true;
+      addBtn.setAttribute('aria-label', `Add ${skillType} skill`);
+      addBtn.addEventListener('click', async () => {
+        const val = inp.value.trim();
+        if (!val) return;
+        inp.disabled = true;
+        addBtn.disabled = true;
+        inp.value = '';
+        await handleAdd(val, inp);
+      });
+
+      const row = document.createElement('div');
+      row.className = 'skill-input-row';
+      row.appendChild(inp);
+      row.appendChild(addBtn);
+      wrap.appendChild(row);
     }
   }
 
