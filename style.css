@@ -1566,12 +1566,14 @@ p  { color: var(--text-secondary); line-height: 1.7; }
 }
 .skill-input-area input::placeholder { color: var(--text-muted); }
 
-/* Row that holds the text input + Add button as a single flex line */
+/* Row that holds the text input + Add button as a single flex line.
+   width:100% forces it onto its own full-width row below the skill chips,
+   even when chips nearly fill the container. */
 .skill-input-row {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  flex: 1;
+  width: 100%;
   min-width: 0;
 }
 .skill-input-row input {
