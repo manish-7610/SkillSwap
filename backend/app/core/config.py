@@ -19,8 +19,9 @@ class Settings(BaseSettings):
     ALLOWED_ORIGINS: str = "http://localhost:5500,http://127.0.0.1:5500"
 
     # Database
-    # Must be provided via .env — no insecure default.
-    # Example: mysql+pymysql://username:password@localhost:3306/skillswap
+    # Must be provided via .env or environment variable — no insecure default.
+    # Example (Supabase Session Pooler):
+    #   postgresql+psycopg://postgres.<project-ref>:<password>@aws-0-<region>.pooler.supabase.com:5432/postgres
     DATABASE_URL: str = ""
 
     # JWT
@@ -43,7 +44,7 @@ class Settings(BaseSettings):
         if not self.DATABASE_URL:
             raise ValueError(
                 "DATABASE_URL is not set. "
-                "Add DATABASE_URL=mysql+pymysql://user:pass@host:port/db to your .env file."
+                "Add DATABASE_URL=postgresql+psycopg://user:pass@host:5432/db to your .env file."
             )
 
     @property

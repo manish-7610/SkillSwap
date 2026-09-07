@@ -1912,7 +1912,7 @@ function openProfileModal() {
 
   /* ── Avatar upload — custom photo ── */
 
-  // Max raw file size: 3 MB  (base64-encodes to ~4 MB, within backend + MEDIUMTEXT limit)
+  // Max raw file size: 3 MB  (base64-encodes to ~4 MB, within backend PostgreSQL TEXT limit)
   const AVATAR_MAX_RAW_BYTES = 3 * 1024 * 1024;
   const AVATAR_ALLOWED_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
 

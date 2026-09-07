@@ -2,7 +2,7 @@
 
 SkillSwap is a full-stack skill-exchange platform where people can teach what they know, learn what they want, connect with compatible users, and communicate in real time.
 
-Built as a hackathon project, it demonstrates a complete web application stack: a vanilla-JS single-page frontend, a FastAPI REST + WebSocket backend, MySQL persistence, JWT authentication, and a deterministic skill-matching algorithm.
+Built as a hackathon project, it demonstrates a complete web application stack: a vanilla-JS single-page frontend, a FastAPI REST + WebSocket backend, PostgreSQL (Supabase) persistence, JWT authentication, and a deterministic skill-matching algorithm.
 
 ---
 
@@ -67,7 +67,7 @@ Built as a hackathon project, it demonstrates a complete web application stack: 
 | Frontend | HTML5, CSS3, Vanilla JavaScript (ES2022+) |
 | Backend | Python 3.14, FastAPI 0.136 |
 | ASGI server | Uvicorn 0.48 |
-| Database | MySQL 8 |
+| Database | PostgreSQL 17 (Supabase) |
 | ORM | SQLAlchemy 2.0 |
 | Authentication | JWT via python-jose, passwords via passlib (bcrypt) |
 | Schema validation | Pydantic v2 + pydantic-settings |
@@ -191,7 +191,7 @@ The backend authorization layer is the final security boundary for all data oper
 ### Prerequisites
 
 - Python 3.11 or later
-- MySQL 8 (database must be created before running migrations)
+- A [Supabase](https://supabase.com) project with the connection string from **Project Settings → Database → Session Pooler (port 5432)**
 - Node.js (optional — only used by the QA script for a syntax check)
 - VS Code with the [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) (or any static file server)
 
@@ -231,7 +231,7 @@ copy .env.example .env
 Open `backend/.env` and fill in your values:
 
 ```env
-DATABASE_URL=mysql+pymysql://username:password@localhost:3306/skillswap
+DATABASE_URL=postgresql+psycopg://postgres.your-project-ref:your-db-password@aws-0-region.pooler.supabase.com:5432/postgres
 SECRET_KEY=replace-with-a-secure-random-secret-at-least-32-chars
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=1440
@@ -247,21 +247,15 @@ Generate a secure `SECRET_KEY`:
 python -c "import secrets; print(secrets.token_hex(32))"
 ```
 
-### 4. Create the MySQL database
+### 4. Run database migrations
 
-```sql
-CREATE DATABASE skillswap CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-```
-
-### 5. Run database migrations
-
-From the `backend/` directory:
+From the `backend/` directory, run Alembic against your Supabase database (the `DATABASE_URL` in `.env` must be set first):
 
 ```bash
 alembic upgrade head
 ```
 
-### 6. Start the backend server
+### 5. Start the backend server
 
 ```bash
 uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
@@ -269,7 +263,7 @@ uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 
 API docs will be available at `http://127.0.0.1:8000/docs`.
 
-### 7. Serve the frontend
+### 6. Serve the frontend
 
 Open the project root in VS Code and click **Go Live** (Live Server extension), or use any static file server pointed at the project root.
 
